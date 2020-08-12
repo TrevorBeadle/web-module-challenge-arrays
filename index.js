@@ -1,7 +1,7 @@
 var originalFlavors = ["Banana Nut Fudge",
     "Black Walnut",
     "Burgundy Cherry",
-   "Butterscotch Ribbon",
+    "Butterscotch Ribbon",
     "Cherry Macaron",
     "Chocolate",
     "Chocolate Almond",
@@ -30,14 +30,7 @@ var originalFlavors = ["Banana Nut Fudge",
     "Vanilla",
     "Vanilla Burnt Almond"]
 
-    let copyOriginalFlavors = [];
 
-    function copy(arr, newArr){
-        newArr = [...arr];
-        return newArr;
-    }
-    
-    console.log(copy(originalFlavors, copyOriginalFlavors));
 
 /* Task 1: Confirm that the array is exactly 31 flavors. Your function should accept:
 
@@ -49,10 +42,10 @@ To save you from having to count the items above, you can assume that length of 
 
 i.e. is31Flavors(originalFlavors) will return TRUE.*/
 
-function is31Flavors(array){
-    if (array.length === 31){
+function is31Flavors(array) {
+    if (array.length === 31) {
         console.log(true);
-    }else{
+    } else {
         console.log(false);
     }
 
@@ -68,9 +61,9 @@ Your function should accept:
 
 Your function should add the flavor to the front of the array and console.log the resulting array.
 
-For example addFlavor("Rainbow Sherbert", originalFlavors) should return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"] */ 
+For example addFlavor("Rainbow Sherbert", originalFlavors) should return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"] */
 
-function addFlavor(flavor, array){
+function addFlavor(flavor, array) {
     array.unshift(flavor);
     console.log(array)
 }
@@ -85,9 +78,9 @@ Your function should accept:
 
 Your function should remove a flavor from the end of the array and console.log the resulting array.
 
-For example removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]*/ 
+For example removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]*/
 
-function removeLastFlavor(array){
+function removeLastFlavor(array) {
     array.pop();
     console.log(array);
 }
@@ -102,7 +95,7 @@ Your function should accept:
 
 For example, getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully. */
 
-function getFlavorByIndex(array, index){
+function getFlavorByIndex(array, index) {
     console.log(array[index]);
 }
 getFlavorByIndex(originalFlavors, 2);
@@ -120,14 +113,14 @@ Hint: You can use .splice() for this
 
 */
 
-function removeFlavorByName(arr, str){
-    for (let i = 0; i < arr.length; i++){
-        if (arr[i] === str){
+function removeFlavorByName(arr, str) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === str) {
             let itemIndex = [i];
             arr.splice(itemIndex, 1);
         }
     }
-    return(arr);
+    return (arr);
 }
 console.log(removeFlavorByName(originalFlavors, "Vanilla"));
 
@@ -140,12 +133,12 @@ Your function should accept:
 
 and should return a new array that is identical to the old array. You can name the new array however you'd like. */
 
-// function copy(arr, newArr){
-//     newArr = [...arr];
-//     return newArr;
-// }
+function copy(arr, newArr){
+    newArr = [...arr];
+    return newArr;
+}
 
-// console.log(copy(originalFlavors, 'copyOriginalFlavors'));
+console.log(copy(originalFlavors, 'copyOriginalFlavors'));
 
 /* Task 7: July 7th is "World Chocolate Day" and Baskin Robins wants to create promotional materials highlighting all of their chocolate flavors. Write a function that checks every item in the array for a given string and returns a new array called filteredArray with just these values. Rather than hardcoding "chocolate" into your function, pass a string as a parameter, and invoke with the argument "chocolate". This way you could also filter for "Vanilla", "Sherbert", etc. when those holidays roll around.
 
@@ -162,10 +155,10 @@ DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem.
 
 hint - you can use the .includes method to help you solve this */
 
-function filterByWord(arr, str){
+function filterByWord(arr, str) {
     let newArr = [];
-    for (let i = 0; i < arr.length; i++){
-        if (arr[i].includes(str)){
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].includes(str)) {
             newArr.push(arr[i]);
         }
     }
@@ -175,7 +168,7 @@ console.log(filterByWord(originalFlavors, 'Chocolate'));
 
 
 
-/* 🧁🍦🍨 STRETCH 🍨🍦🍫*/ 
+/* 🧁🍦🍨 STRETCH 🍨🍦🍫*/
 
 /* STRETCH 1: Write a function that returns the average number of words in an array. You should be able to use this function for any array, but can test with originalFlavors.
 
@@ -187,11 +180,10 @@ and should return the average number of words per item in the array.
 
 For example, getAverageWordLength(originalFlavors) should return a number between 0 and 3. */
 
-function getAverageWordLength(arr){
+function getAverageWordLength(arr) {
     let count = 0;
-    for (let i = 0; i < arr.length; i++){
-        let flavor = arr[i];
-        count = count + flavor.split(' ').length;
+    for (let i = 0; i < arr.length; i++) {
+        count = count + arr[i].split(' ').length;
     }
     let average = count / arr.length;
     return average;
@@ -231,7 +223,7 @@ var newFlavors = ["Date night",
     "Chocolate Fudge",
     "Daiquiri Ice",
     "Rainbow Sherbet",
-    "Rainbow Swirl"] 
+    "Rainbow Swirl"]
 var seasonalFlavors = ["America's Birthday Cake",
     "Baseball Nut®",
     "Blueberry Cheesecake",
@@ -281,6 +273,14 @@ var regionalFlavors = ["Pink Bubblegum",
     "Chocolate Chocolate Chip Cheesecake",
     "Caramel 'n' Cookies"]
 
-function getRandomFlavors(arr1, arr2, arr3, arr4){
-    
+function getRandomFlavors(arr1, arr2, arr3, arr4) {
+    let flavorMatrix = [arr1, arr2, arr3, arr4];
+    let randomFlavors = [];
+    while (randomFlavors.length < 31) {
+        let row = Math.floor(Math.random() * flavorMatrix.length);
+        let col = Math.floor(Math.random() * flavorMatrix[row].length);
+        randomFlavors.push(flavorMatrix[row][col]);
+    }
+    return randomFlavors;
 }
+console.log(getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors))
